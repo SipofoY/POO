@@ -1,0 +1,44 @@
+#ifndef POISON_HPP
+#define POISON_HPP
+
+
+class Poison
+{
+    
+    public:
+        /*! @brief Constructeur prennant un Toricposition et un Quantity
+         *  @param un Toricposition qui represente la position et quantity qui represente la quantité
+    */
+        Poison(ToricPosition pos, Quantity quant);
+    
+        /*! @return la quantité restante après le prelevement de quantité
+         *  @param un Quantity qui represente la quantité à prelevé
+    */
+        Quantity takeQuantity(Quantity quantite_donnee);
+    
+    
+        /*!  @brief méthode de dessin général, valable pour toutes les nourritures
+         *   @param un sf:: Time, qui indique le découlement du temps
+    */
+        void drawOn(sf::RenderTarget& target) const;
+    
+        /*! @return la quantité de nourriture totale
+    */
+        static  Quantity getTotalFood();
+    
+        /*! @return la quantité de nourriture
+    */
+        Quantity getQuantity() const;
+        /*! @brief destructeur de nourriture
+    */
+        ~Poison();
+    
+    
+    private:
+        Quantity quantite;
+        static Quantity foodTotal;
+    
+ 
+};
+
+#endif // POISON_HPP
