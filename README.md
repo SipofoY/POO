@@ -1,34 +1,34 @@
-# Ant Simulator — Projet POO
+# Ant Simulator — OOP Project
 
-Projet réalisé dans le cadre du cours de Programmation Orientée Objet (EPFL), en binôme avec Clara.
+Project completed as part of the Object-Oriented Programming course at EPFL, in a team of two with Clara.
 
-Le projet consiste à simuler une fourmilière : des fourmis (ouvrières, soldats) et des termites évoluent dans un environnement torique, cherchent de la nourriture, communiquent par phéromones et interagissent avec des ennemis. La simulation est développée progressivement au fil de plusieurs étapes, chacune ajoutant de nouvelles fonctionnalités et un niveau de conception supplémentaire.
+The project simulates an anthill: ants (workers, soldiers) and termites move around a toroidal environment, search for food, communicate via pheromones, and interact with enemies. The simulation was built incrementally across several stages, each adding new features and a further level of design.
 
-## Structure du dépôt
+## Repository structure
 
-Chaque dossier `partieX` correspond à une étape du projet, la version la plus aboutie étant `partie5b` :
+Each `partieX` folder corresponds to a stage of the project, with `partie5b` being the most complete version:
 
-- `partie1` — briques de base : vecteurs 2D (`Vec2d`), positions toriques, génération aléatoire, sérialisation JSON.
-- `partie2` — modélisation de l'environnement et des colonies (fourmis, déambulation).
-- `partie3` — comportements et interactions entre entités.
-- `partie4` — extension du modèle (phéromones, ennemis).
-- `partie5` / `partie5b` — version finale : simulation graphique complète avec SFML, statistiques, interface.
+- `partie1` — basic building blocks: 2D vectors (`Vec2d`), toric positions, random generation, JSON serialization.
+- `partie2` — modeling of the environment and colonies (ants, wandering behavior).
+- `partie3` — behaviors and interactions between entities.
+- `partie4` — model extension (pheromones, enemies).
+- `partie5` / `partie5b` — final version: full graphical simulation with SFML, statistics, interface.
 
-Chaque étape suit la même organisation :
-- `src/` — code source C++ (entités, environnement, utilitaires, JSON, tests).
-- `res/` — ressources graphiques et polices utilisées par la simulation.
-- `extlib/` — bibliothèques externes (Catch, pour les tests unitaires).
+Each stage follows the same layout:
+- `src/` — C++ source code (entities, environment, utilities, JSON, tests).
+- `res/` — graphical resources and fonts used by the simulation.
+- `extlib/` — external libraries (Catch, for unit testing).
 
 ## Technologies
 
 - C++14
 - CMake
-- [SFML](https://www.sfml-dev.org/) 2.5 (rendu graphique)
-- [Catch](https://github.com/catchorg/Catch2) (tests unitaires)
+- [SFML](https://www.sfml-dev.org/) 2.5 (graphics rendering)
+- [Catch](https://github.com/catchorg/Catch2) (unit testing)
 
-## Compilation
+## Building
 
-Chaque étape se compile indépendamment via CMake, par exemple pour la version finale :
+Each stage is built independently via CMake, for example for the final version:
 
 ```bash
 cd partie5b/src
@@ -37,4 +37,4 @@ cmake ..
 make
 ```
 
-SFML doit être installé sur la machine pour compiler les parties incluant la partie graphique (à partir de `partie5`).
+SFML must be installed to build the stages that include the graphical part (from `partie5` onward).
